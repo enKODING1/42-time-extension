@@ -11,7 +11,6 @@ async function fetchLocationStats(login: string) {
     return null;
   }
 }
-
 enum Month {
   Jan = 'jan',
   Feb = 'feb',
@@ -67,14 +66,31 @@ function getMonthKey(month: string): Month {
   return monthEnums[Number(month)] as Month;
 }
 
-(async () => {
+function getLogin(): string | undefined {
   const loginElem = document.querySelector<HTMLElement>('.login');
-  const login = loginElem?.dataset.login;
-  if (!login) return;
-  const locationStats = await fetchLocationStats(login);
-  if (locationStats) {
+  if (loginElem?.dataset.login) return loginElem.dataset.login;
+  // v3: full xpath로 닉네임 추출
+  const result = document.querySelector<HTMLElement>('p');
+  console.log(`result: ${result}`);
+  if (result) return result.textContent?.trim();
+  return undefined;
+}
+
+function waitForLoginAndRun(callback: (login: string) => void, retry = 10) {
+  const login = getLogin();
+  if (login) {
+    callback(login);
+  } else if (retry > 0) {
+    setTimeout(() => waitForLoginAndRun(callback, retry - 1), 300);
+  } else {
+    console.log('login not found');
+  }
+}
+
+waitForLoginAndRun((login) => {
+  fetchLocationStats(login).then((locationStats) => {
+    if (!locationStats) return;
     const monthlyStats = getMonthlyAccumulatedTime(locationStats);
-    console.log(monthlyStats);
     const svg = document.getElementById('user-locations');
     if (svg) {
       const textNodes = svg.querySelectorAll('text');
@@ -108,5 +124,39 @@ function getMonthKey(month: string): Month {
         }
       });
     }
-  }
-})();
+    const tables = document.querySelectorAll('table.table-fixed');
+    tables.forEach((table) => {
+      const thead = table.querySelector('thead');
+      if (!thead) return;
+      const monthTr = thead.querySelector('tr');
+      if (!monthTr) return;
+      const monthThs = monthTr.querySelectorAll('th');
+      if (thead.querySelector('tr[data-logtime]')) return;
+      const timeTr = document.createElement('tr');
+      timeTr.setAttribute('data-logtime', 'true');
+      monthThs.forEach((th) => {
+        let monthName = th.textContent?.trim().toLowerCase();
+        let matchedMonth: Month | undefined = undefined;
+        for (const key in Month) {
+          if (Month[key as keyof typeof Month] === monthName) {
+            matchedMonth = Month[key as keyof typeof Month];
+            break;
+          }
+        }
+        const td = document.createElement('td');
+        td.colSpan = th.colSpan || 1;
+        td.style.textAlign = 'center';
+        if (matchedMonth && monthlyStats[matchedMonth]) {
+          const { hour, min } = monthlyStats[matchedMonth]!;
+          td.textContent = `${hour.toString().padStart(2, '0')}h ${min.toString().padStart(2, '0')}m`;
+          td.style.color = '#007B7C';
+          td.style.fontWeight = 'bold';
+        } else {
+          td.textContent = '-';
+        }
+        timeTr.appendChild(td);
+      });
+      thead.appendChild(timeTr);
+    });
+  });
+});
