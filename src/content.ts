@@ -69,10 +69,8 @@ function getMonthKey(month: string): Month {
 function getLogin(): string | undefined {
   const loginElem = document.querySelector<HTMLElement>('.login');
   if (loginElem?.dataset.login) return loginElem.dataset.login;
-  // v3: full xpath로 닉네임 추출
-  const result = document.querySelector<HTMLElement>('p');
-  console.log(`result: ${result}`);
-  if (result) return result.textContent?.trim();
+  const pElem = document.querySelector('p');
+  if (pElem && pElem.textContent?.trim()) return pElem.textContent.trim();
   return undefined;
 }
 
@@ -85,6 +83,65 @@ function waitForLoginAndRun(callback: (login: string) => void, retry = 10) {
   } else {
     console.log('login not found');
   }
+}
+
+function updateV3Calendar(monthlyStats: MonthStatsMap) {
+  const tables = document.querySelectorAll('table.table-fixed');
+  tables.forEach((table) => {
+    const thead = table.querySelector('thead');
+    if (!thead) return;
+    const monthTr = thead.querySelector('tr');
+    if (!monthTr) return;
+    const monthThs = monthTr.querySelectorAll('th');
+    if (thead.querySelector('tr[data-logtime]')) return;
+    const timeTr = document.createElement('tr');
+    timeTr.setAttribute('data-logtime', 'true');
+    monthThs.forEach((th) => {
+      let monthName = th.textContent?.trim().toLowerCase();
+      let matchedMonth: Month | undefined = undefined;
+      for (const key in Month) {
+        if (Month[key as keyof typeof Month] === monthName) {
+          matchedMonth = Month[key as keyof typeof Month];
+          break;
+        }
+      }
+      const td = document.createElement('td');
+      td.colSpan = th.colSpan || 1;
+      td.style.textAlign = 'center';
+      if (matchedMonth && monthlyStats[matchedMonth]) {
+        const { hour, min } = monthlyStats[matchedMonth]!;
+        td.textContent = `${hour.toString().padStart(2, '0')}h ${min.toString().padStart(2, '0')}m`;
+        td.style.color = '#007B7C';
+        td.style.fontWeight = 'bold';
+      } else {
+        td.textContent = '-';
+      }
+      timeTr.appendChild(td);
+    });
+    thead.appendChild(timeTr);
+  });
+}
+
+function observeV3Calendar(monthlyStats: MonthStatsMap) {
+  const observer = new MutationObserver((mutations, obs) => {
+    const tables = document.querySelectorAll('table.table-fixed');
+    let updated = false;
+    tables.forEach((table) => {
+      const thead = table.querySelector('thead');
+      if (!thead) return;
+      const monthTr = thead.querySelector('tr');
+      if (!monthTr) return;
+      const monthThs = monthTr.querySelectorAll('th');
+      if (!thead.querySelector('tr[data-logtime]') && monthThs.length > 0) {
+        updateV3Calendar(monthlyStats);
+        updated = true;
+      }
+    });
+    if (updated) {
+      obs.disconnect();
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 }
 
 waitForLoginAndRun((login) => {
@@ -124,39 +181,7 @@ waitForLoginAndRun((login) => {
         }
       });
     }
-    const tables = document.querySelectorAll('table.table-fixed');
-    tables.forEach((table) => {
-      const thead = table.querySelector('thead');
-      if (!thead) return;
-      const monthTr = thead.querySelector('tr');
-      if (!monthTr) return;
-      const monthThs = monthTr.querySelectorAll('th');
-      if (thead.querySelector('tr[data-logtime]')) return;
-      const timeTr = document.createElement('tr');
-      timeTr.setAttribute('data-logtime', 'true');
-      monthThs.forEach((th) => {
-        let monthName = th.textContent?.trim().toLowerCase();
-        let matchedMonth: Month | undefined = undefined;
-        for (const key in Month) {
-          if (Month[key as keyof typeof Month] === monthName) {
-            matchedMonth = Month[key as keyof typeof Month];
-            break;
-          }
-        }
-        const td = document.createElement('td');
-        td.colSpan = th.colSpan || 1;
-        td.style.textAlign = 'center';
-        if (matchedMonth && monthlyStats[matchedMonth]) {
-          const { hour, min } = monthlyStats[matchedMonth]!;
-          td.textContent = `${hour.toString().padStart(2, '0')}h ${min.toString().padStart(2, '0')}m`;
-          td.style.color = '#007B7C';
-          td.style.fontWeight = 'bold';
-        } else {
-          td.textContent = '-';
-        }
-        timeTr.appendChild(td);
-      });
-      thead.appendChild(timeTr);
-    });
+    updateV3Calendar(monthlyStats); 
+    observeV3Calendar(monthlyStats); 
   });
 });
