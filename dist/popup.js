@@ -1,0 +1,1 @@
+(()=>{"use strict";document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("btn");e?.addEventListener("click",()=>{alert("버튼 클릭!")})})})();
