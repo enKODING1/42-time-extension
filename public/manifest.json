@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "42-time Extension",
+  "name": "42 time",
   "version": "1.0",
-  "description": "42-time extension",
+  "description": "42 time manager",
  "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
@@ -21,7 +21,5 @@
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": "icons/icon128.png"
-  },
-  "permissions": []
-  
+  }
 } 
