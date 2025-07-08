@@ -1,6 +1,11 @@
 # 42-time-extension
 
 After installation, check your profile calendar! 42-time is a Chrome extension that visually displays your accumulated monthly login time on the 42 intra.
+<br>
+<img width="173" alt="intra-original" src="https://github.com/user-attachments/assets/1aceb15b-7392-42cc-b9e3-1bfe4cf68836" />
+<br>
+<img width="200" alt="intra-v3" src="https://github.com/user-attachments/assets/83d6abf9-d905-4aa3-963f-0498ec8ceb5d" />
+
 
 ## Main Features
 
