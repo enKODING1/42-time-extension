@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('btn');
+  const btn = document.getElementById('intra-link');
   btn?.addEventListener('click', () => {
-    alert('버튼 클릭!');
+    chrome.tabs.create({ url: 'https://intra.42.fr' });
   });
 }); 
