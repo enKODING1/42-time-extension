@@ -70,7 +70,13 @@ function getLogin(): string | undefined {
   const loginElem = document.querySelector<HTMLElement>('.login');
   if (loginElem?.dataset.login) return loginElem.dataset.login;
   const pElem = document.querySelector('p');
-  if (pElem && pElem.textContent?.trim()) return pElem.textContent.trim();
+  if (pElem && pElem.textContent?.trim()) 
+  {
+    if (pElem.textContent?.includes(",")) {
+      return pElem.textContent?.split(",")[1].trim();
+    }
+    return pElem.textContent.trim();
+  }
   return undefined;
 }
 

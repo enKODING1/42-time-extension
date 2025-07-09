@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "42 time",
-  "version": "1.1",
+  "version": "1.1.1",
   "description": "42 time manager",
  "icons": {
     "16": "icons/icon16.png",
