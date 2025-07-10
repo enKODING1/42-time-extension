@@ -73,14 +73,8 @@ function getLogin(): string | undefined {
   let login = null;
   if (pElem && pElem.textContent?.trim()) 
   {
-    if (pElem.textContent?.includes(",")) {
-       login = pElem.textContent?.split(", ")[1];
-    }
-    if (pElem.textContent?.includes(" ")){
-      login = pElem.textContent?.split(" ")[1];
-    }
-    if (login) return login.trim();
-    return pElem.textContent?.trim();
+    login = pElem.textContent?.split(" ");
+    return login[login.length - 1];
   }
   return undefined;
 }
