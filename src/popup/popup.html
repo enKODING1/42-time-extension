@@ -6,9 +6,27 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>42-time</h1>
-    <span>check your profile!</span>
-    <a href="https://intra.42.fr" id="intra-link">Go to 42 Intra</a>
+    <div class="container">
+      <div class="header">
+        <div class="logo">⏰</div>
+        <h1>42 Time</h1>
+        <p class="subtitle">월별 학습시간 확인하기</p>
+      </div>
+      
+      <div class="main">
+        <a href="https://intra.42.fr" id="intra-link" class="primary-btn">
+          <span class="btn-icon">🔗</span>
+          프로필 확인하러 가기
+        </a>
+      </div>
+      
+      <div class="footer">
+        <p class="info">프로필 페이지에서 월별 누적시간을 확인하세요</p>
+        <a href="https://github.com/enkoding1/42-time-extension" id="github-link" class="secondary-link">
+          Issues & Feedback →
+        </a>
+      </div>
+    </div>
     <script src="../popup.js"></script>
   </body>
 </html> 
