@@ -69,12 +69,16 @@ function getMonthKey(month: string): Month {
 function getLogin(): string | undefined {
   const loginElem = document.querySelector<HTMLElement>('.login');
   if (loginElem?.dataset.login) return loginElem.dataset.login;
-  const pElem = document.querySelector('p');
+  const pElem = document.querySelector('a[href*="mailto"]');
   let login = null;
-  if (pElem && pElem.textContent?.trim()) 
-  {
-    login = pElem.textContent?.split(" ");
-    return login[login.length - 1];
+  if (pElem) {
+    login = pElem.textContent?.split("@");
+    if (login && login.length > 0) {
+      return login[0];
+    }
+    else {
+      return undefined;
+    }
   }
   return undefined;
 }
