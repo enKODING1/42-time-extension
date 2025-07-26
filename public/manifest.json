@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "42 time",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "42 time manager",
   "default_locale": "en",
   "host_permissions": [
