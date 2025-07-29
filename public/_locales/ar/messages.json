@@ -1,0 +1,22 @@
+{
+  "appName": {
+    "message": "42 Time",
+    "description": "Application name"
+  },
+  "appSubtitle": {
+    "message": "تحقق من ساعات التعلم الشهرية",
+    "description": "Application subtitle"
+  },
+  "goToProfile": {
+    "message": "اذهب إلى الملف الشخصي",
+    "description": "Button text to go to profile"
+  },
+  "infoText": {
+    "message": "تحقق من ساعات التعلم المتراكمة الشهرية في صفحة ملفك الشخصي",
+    "description": "Information text in footer"
+  },
+  "issuesFeedback": {
+    "message": "Issues & Feedback →",
+    "description": "Link text for GitHub issues and feedback"
+  }
+} 
