@@ -1,0 +1,98 @@
+{
+  "appName": {
+    "message": "42 Time",
+    "description": "Application name"
+  },
+  "appSubtitle": {
+    "message": "Check your monthly learning hours",
+    "description": "Application subtitle"
+  },
+  "goToProfile": {
+    "message": "Go to Profile",
+    "description": "Button text to go to profile"
+  },
+  "infoText": {
+    "message": "Check your monthly accumulated hours on your profile page",
+    "description": "Information text in footer"
+  },
+  "issuesFeedback": {
+    "message": "Issues & Feedback →",
+    "description": "Link text for GitHub issues and feedback"
+  },
+  "settingsButton": {
+    "message": "Settings",
+    "description": "Settings button text"
+  },
+  "optionsTitle": {
+    "message": "42 Time - Settings",
+    "description": "Options page title"
+  },
+  "settingsTitle": {
+    "message": "42 Time Settings",
+    "description": "Settings page main title"
+  },
+  "settingsSubtitle": {
+    "message": "Configure theme and user information",
+    "description": "Settings page subtitle"
+  },
+  "appearanceTitle": {
+    "message": "Appearance",
+    "description": "Appearance section title"
+  },
+  "themeLabel": {
+    "message": "Theme:",
+    "description": "Theme selection label"
+  },
+  "themeLight": {
+    "message": "Light",
+    "description": "Light theme option"
+  },
+  "themeDark": {
+    "message": "Dark",
+    "description": "Dark theme option"
+  },
+  "themeAuto": {
+    "message": "Follow system setting",
+    "description": "Auto theme option"
+  },
+  "profileTitle": {
+    "message": "Profile",
+    "description": "Profile section title"
+  },
+  "usernameLabel": {
+    "message": "Username:",
+    "description": "Username input label"
+  },
+  "usernameHelp": {
+    "message": "Enter your 42 Intra username for a more personalized experience.",
+    "description": "Username input help text"
+  },
+  "displayTitle": {
+    "message": "Time Display",
+    "description": "Display options section title"
+  },
+  "showTotalTimeLabel": {
+    "message": "Show total time",
+    "description": "Show total time checkbox label"
+  },
+  "showTodayTimeLabel": {
+	"message": "Show today's time",
+	"description": "Show today's time checkbox label"
+  },
+  "showDailyAverageLabel": {
+    "message": "Show daily average(excluding unrecorded days)",
+    "description": "Show daily average checkbox label"
+  },
+  "showDailyLimitLabel": {
+    "message": "12-hour daily limit",
+    "description": "Show daily limit checkbox label"
+  },
+  "saveButton": {
+    "message": "Save",
+    "description": "Save button text"
+  },
+  "resetButton": {
+    "message": "Reset to defaults",
+    "description": "Reset button text"
+  }
+} 

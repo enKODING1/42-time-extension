@@ -1,0 +1,98 @@
+{
+  "appName": {
+    "message": "42 Time",
+    "description": "Application name"
+  },
+  "appSubtitle": {
+    "message": "月別学習時間を確認",
+    "description": "Application subtitle"
+  },
+  "goToProfile": {
+    "message": "プロフィールを見る",
+    "description": "Button text to go to profile"
+  },
+  "infoText": {
+    "message": "プロフィールページで月別累積時間を確認してください",
+    "description": "Information text in footer"
+  },
+  "issuesFeedback": {
+    "message": "Issues & Feedback →",
+    "description": "Link text for GitHub issues and feedback"
+  },
+  "settingsButton": {
+    "message": "設定",
+    "description": "Settings button text"
+  },
+  "optionsTitle": {
+    "message": "42 Time - 設定",
+    "description": "Options page title"
+  },
+  "settingsTitle": {
+    "message": "42 Time 設定",
+    "description": "Settings page main title"
+  },
+  "settingsSubtitle": {
+    "message": "テーマとユーザー情報を設定してください",
+    "description": "Settings page subtitle"
+  },
+  "appearanceTitle": {
+    "message": "外観",
+    "description": "Appearance section title"
+  },
+  "themeLabel": {
+    "message": "テーマ:",
+    "description": "Theme selection label"
+  },
+  "themeLight": {
+    "message": "ライト",
+    "description": "Light theme option"
+  },
+  "themeDark": {
+    "message": "ダーク",
+    "description": "Dark theme option"
+  },
+  "themeAuto": {
+    "message": "システム設定に従う",
+    "description": "Auto theme option"
+  },
+  "profileTitle": {
+    "message": "プロフィール",
+    "description": "Profile section title"
+  },
+  "usernameLabel": {
+    "message": "ユーザー名:",
+    "description": "Username input label"
+  },
+  "usernameHelp": {
+    "message": "42 Intraユーザー名を入力すると、よりパーソナライズされた体験を提供します。",
+    "description": "Username input help text"
+  },
+  "displayTitle": {
+    "message": "時間表示",
+    "description": "Display options section title"
+  },
+  "showTotalTimeLabel": {
+    "message": "合計時間を表示",
+    "description": "Show total time checkbox label"
+  },
+  "showTodayTimeLabel": {
+	"message": "今日の学習時間を表示",
+	"description": "Show today's time checkbox label"
+  },
+  "showDailyAverageLabel": {
+    "message": "日平均時間を表示(未記録を除く)",
+    "description": "Show daily average checkbox label"
+  },
+  "showDailyLimitLabel": {
+    "message": "1日12時間制限",
+    "description": "Show daily limit checkbox label"
+  },
+  "saveButton": {
+    "message": "保存",
+    "description": "Save button text"
+  },
+  "resetButton": {
+    "message": "デフォルトにリセット",
+    "description": "Reset button text"
+  }
+} 

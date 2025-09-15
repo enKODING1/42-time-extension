@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "42 time",
+  "version": "1.2.3",
+  "description": "42 time manager",
+  "default_locale": "en",
+  "host_permissions": [
+    "https://profile-v3.intra.42.fr/*",
+    "https://profile.intra.42.fr/*",
+    "https://translate.intra.42.fr/*"
+  ],
+  "permissions": ["tabs", "activeTab", "storage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://profile-v3.intra.42.fr/*",
+        "https://profile.intra.42.fr/*"
+      ],
+      "js": ["common-utils.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "icons/icon128.png"
+  },
+  "options_ui": {
+    "page": "option/options.html",
+    "open_in_tab": true
+  }
+}

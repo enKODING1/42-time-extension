@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="options-title">42 Time - 설정</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">⏰</div>
+            <h1 id="settings-title">42 Time 설정</h1>
+            <p class="subtitle" id="settings-subtitle">테마와 사용자 정보를 설정하세요</p>
+        </header>
+
+        <main class="main">
+            <div class="settings-section">
+                <h2 id="appearance-title">외관</h2>
+                <div class="setting-item">
+                    <label for="theme-select" id="theme-label">테마:</label>
+                    <select id="theme-select" class="theme-selector">
+                        <option value="light" id="theme-light">라이트</option>
+                        <option value="dark" id="theme-dark">다크</option>
+                        <option value="auto" id="theme-auto">시스템 설정 따르기</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 id="profile-title">프로필</h2>
+                <div class="setting-item">
+                    <label for="username-input" id="username-label">사용자명:</label>
+                    <input type="text" id="username-input" class="text-input" placeholder="42 사용자명을 입력하세요">
+                    <small class="help-text" id="username-help">42 Intra 사용자명을 입력하면 더 개인화된 경험을 제공합니다.</small>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 id="display-title">시간 표시</h2>
+                <div class="setting-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="show-total-time">
+                        <span id="show-total-time-label">총 시간 표시</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="show-today-time">
+                        <span id="show-today-time-label">오늘 학습 시간 표시</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="show-daily-average">
+                        <span id="show-daily-average-label">일평균 시간 표시(미기록 제외)</span>
+                    </label>
+                </div>
+				<div class="setting-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="show-daily-limit">
+                        <span id="show-daily-limit-label">하루 12시간 제한</span>
+                    </label>
+                </div>
+				<div class="setting-item">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="show-weekly-learning">
+                        <span id="show-weekly-learning-label">주간 학습 시간 표시</span>
+                    </label>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="button-group">
+                <button id="save-button" class="primary-btn">저장</button>
+                <button id="reset-button" class="secondary-btn">기본값으로 재설정</button>
+            </div>
+            <div class="status-message" id="status-message"></div>
+        </footer>
+    </div>
+
+    <script src="../common-utils.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>

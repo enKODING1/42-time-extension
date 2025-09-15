@@ -1,0 +1,98 @@
+{
+  "appName": {
+    "message": "42 Time",
+    "description": "Application name"
+  },
+  "appSubtitle": {
+    "message": "월별 학습시간 확인하기",
+    "description": "Application subtitle"
+  },
+  "goToProfile": {
+    "message": "프로필 확인하러 가기",
+    "description": "Button text to go to profile"
+  },
+  "infoText": {
+    "message": "프로필 페이지에서 월별 누적시간을 확인하세요",
+    "description": "Information text in footer"
+  },
+  "issuesFeedback": {
+    "message": "Issues & Feedback →",
+    "description": "Link text for GitHub issues and feedback"
+  },
+  "settingsButton": {
+    "message": "설정",
+    "description": "Settings button text"
+  },
+  "optionsTitle": {
+    "message": "42 Time - 설정",
+    "description": "Options page title"
+  },
+  "settingsTitle": {
+    "message": "42 Time 설정",
+    "description": "Settings page main title"
+  },
+  "settingsSubtitle": {
+    "message": "테마와 사용자 정보를 설정하세요",
+    "description": "Settings page subtitle"
+  },
+  "appearanceTitle": {
+    "message": "외관",
+    "description": "Appearance section title"
+  },
+  "themeLabel": {
+    "message": "테마:",
+    "description": "Theme selection label"
+  },
+  "themeLight": {
+    "message": "라이트",
+    "description": "Light theme option"
+  },
+  "themeDark": {
+    "message": "다크",
+    "description": "Dark theme option"
+  },
+  "themeAuto": {
+    "message": "시스템 설정 따르기",
+    "description": "Auto theme option"
+  },
+  "profileTitle": {
+    "message": "프로필",
+    "description": "Profile section title"
+  },
+  "usernameLabel": {
+    "message": "사용자명:",
+    "description": "Username input label"
+  },
+  "usernameHelp": {
+    "message": "42 Intra 사용자명을 입력하면 더 개인화된 경험을 제공합니다.",
+    "description": "Username input help text"
+  },
+  "displayTitle": {
+    "message": "시간 표시",
+    "description": "Display options section title"
+  },
+  "showTotalTimeLabel": {
+    "message": "총 시간 표시",
+    "description": "Show total time checkbox label"
+  },
+  "showTodayTimeLabel": {
+	"message": "오늘 학습 시간 표시",
+	"description": "Show today's time checkbox label"
+  },
+  "showDailyAverageLabel": {
+    "message": "일평균 시간 표시(미기록 제외)",
+    "description": "Show daily average checkbox label"
+  },
+  "showDailyLimitLabel": {
+    "message": "하루 12시간 제한",
+    "description": "Show daily limit checkbox label"
+  },
+  "saveButton": {
+    "message": "저장",
+    "description": "Save button text"
+  },
+  "resetButton": {
+    "message": "기본값으로 재설정",
+    "description": "Reset button text"
+  }
+} 

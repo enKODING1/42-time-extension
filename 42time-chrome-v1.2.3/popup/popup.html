@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>42-time</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">⏰</div>
+        <h1 id="app-name">42 Time</h1>
+        <p class="subtitle" id="app-subtitle">월별 학습시간 확인하기</p>
+        
+        <!-- 시간 표시 영역들 -->
+        <div class="time-display-container">
+          <!-- 이번달 총 시간 -->
+          <div class="time-section current-month-time" id="current-month-time" style="display: none;">
+            <div class="time-label" id="month-label">이번달</div>
+            <div class="time-value" id="time-value">--h --m</div>
+            <div class="excess-time" id="current-month-excess" style="display: none;">
+              <span class="excess-label">초과:</span>
+              <span class="excess-value">--h --m</span>
+            </div>
+          </div>
+          
+          <!-- 주간 학습 시간 -->
+          <div class="time-section weekly-learning" id="weekly-learning" style="display: none;">
+            <div class="time-label">이번 주</div>
+            <div class="time-value" id="weekly-learning-value">--h --m</div>
+            <div class="excess-time" id="weekly-learning-excess" style="display: none;">
+              <span class="excess-label">주간 초과:</span>
+              <span class="excess-value">--h --m</span>
+            </div>
+          </div>
+		  
+          <!-- 오늘 학습 시간 -->
+          <div class="time-section today-time" id="today-time" style="display: none;">
+            <div class="time-label">오늘</div>
+            <div class="time-value" id="today-time-value">--h --m</div>
+            <div class="excess-time" id="today-excess" style="display: none;">
+              <span class="excess-label">초과:</span>
+              <span class="excess-value">--h --m</span>
+            </div>
+          </div>
+          
+          <!-- 일평균 시간 -->
+          <div class="time-section daily-average" id="daily-average" style="display: none;">
+            <div class="time-label">일평균</div>
+            <div class="time-value" id="daily-average-value">--h --m</div>
+            <div class="excess-time" id="daily-average-excess" style="display: none;">
+              <span class="excess-label">평균 초과:</span>
+              <span class="excess-value">--h --m</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="main">
+        <a href="https://intra.42.fr" id="intra-link" class="primary-btn">
+          <span id="go-to-profile">프로필 확인하러 가기</span>
+        </a>
+        <button id="settings-button" class="settings-btn">
+          <span>설정</span>
+        </button>
+      </div>
+
+    </div>
+    <script src="../common-utils.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
