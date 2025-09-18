@@ -4,7 +4,9 @@
   "description": "42-time extension",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch"
+    "build:firefox": "webpack --mode production && cp public/manifest.firefox.json dist/manifest.json",
+    "dev": "webpack --mode development --watch",
+    "dev:firefox": "webpack --mode development --watch & nodemon --watch public/manifest.firefox.json --exec \"cp public/manifest.firefox.json dist/manifest.json\""
   },
   "devDependencies": {
     "@types/chrome": "^0.0.329",
