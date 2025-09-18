@@ -1,6 +1,9 @@
 # 42-time-extension
 
-After installation, check your profile calendar! 42-time is a Chrome extension that visually displays your accumulated monthly login time on the 42 intra.
+[![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/42-time/kjkbhbllddgdfkmhonkmmkeongciaknd)
+[![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](#firefox)
+
+After installation, check your profile calendar! 42-time is a cross-browser extension that visually displays your accumulated monthly login time on the 42 intra.
 <br>
 <img width="173" alt="intra-original" src="https://github.com/user-attachments/assets/1aceb15b-7392-42cc-b9e3-1bfe4cf68836" />
 <br>
@@ -9,15 +12,26 @@ After installation, check your profile calendar! 42-time is a Chrome extension t
 
 ## Main Features
 
-- Displays accumulated monthly login time (in hours/minutes) on the 42 intra page
-- Supports profile v3
+-  **Cross-browser support**: Works on both Chrome and Firefox
+- ️ **Time tracking**: Displays accumulated monthly login time (in hours/minutes) on the 42 intra page
+-  **Profile v3 support**: Compatible with both old and new 42 intra profiles
+-  **Multi-language**: Supports 6 languages (EN, KO, JA, AR, FR, IT)
 
 ## Installation
 
+### Chrome
 1. Clone this repository or download it as a zip file.
-2. Go to `chrome://extensions` in your Chrome browser.
-3. Enable **Developer mode** in the top right corner.
-4. Click **Load unpacked** and select the project folder (e.g., `42-time-extension/`).
+2. Run `npm run build`
+3. Go to `chrome://extensions` in your Chrome browser.
+4. Enable **Developer mode** in the top right corner.
+5. Click **Load unpacked** and select the `dist` folder.
+
+### Firefox
+1. Clone this repository or download it as a zip file.
+2. Build the Firefox version: `npm run build:firefox`
+3. Go to `about:debugging` in your Firefox browser.
+4. Click **This Firefox** in the left sidebar.
+5. Click **Load Temporary Add-on** and select `dist/manifest.json`.
 
 ## Usage
 
@@ -28,13 +42,22 @@ After installation, check your profile calendar! 42-time is a Chrome extension t
 
 - TypeScript
 - Webpack
-- Chrome Extension Manifest V3
+- Cross-browser compatibility layer
 
 ## Development & Build
 
 ```bash
 npm install
+
+# For Chrome
 npm run build
+
+# For Firefox
+npm run build:firefox
+
+# Development mode
+npm run dev        # Chrome
+npm run dev:firefox # Firefox
 ```
 
 - The build output will be generated in the `dist/` folder.
