@@ -1,7 +1,7 @@
 # 42-time-extension
 
 [![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/42-time/mkcopllnpeelmaigfccokdclgaefnjoe?authuser=3&hl=ko)
-[![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](#firefox)
+[![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/42-time/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
 After installation, check your profile calendar! 42-time is a cross-browser extension that visually displays your accumulated monthly login time on the 42 intra.
 <br>
