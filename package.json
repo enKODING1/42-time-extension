@@ -6,11 +6,20 @@
     "build": "webpack --mode production",
     "build:firefox": "webpack --mode production && cp public/manifest.firefox.json dist/manifest.json",
     "dev": "webpack --mode development --watch",
-    "dev:firefox": "webpack --mode development --watch & nodemon --watch public/manifest.firefox.json --exec \"cp public/manifest.firefox.json dist/manifest.json\""
+    "dev:firefox": "webpack --mode development --watch & nodemon --watch public/manifest.firefox.json --exec \"cp public/manifest.firefox.json dist/manifest.json\"",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.{ts,css,html}",
+    "format:check": "prettier --check src/**/*.{ts,css,html}"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.329",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.0",
     "ts-loader": "^9.0.0",
     "typescript": "^5.0.0",
     "webpack": "^5.0.0",
