@@ -9,17 +9,17 @@ After installation, check your profile calendar! 42-time is a cross-browser exte
 <br>
 <img width="200" alt="intra-v3" src="https://github.com/user-attachments/assets/83d6abf9-d905-4aa3-963f-0498ec8ceb5d" />
 
-
 ## Main Features
 
--  **Cross-browser support**: Works on both Chrome and Firefox
+- **Cross-browser support**: Works on both Chrome and Firefox
 - ️ **Time tracking**: Displays accumulated monthly login time (in hours/minutes) on the 42 intra page
--  **Profile v3 support**: Compatible with both old and new 42 intra profiles
--  **Multi-language**: Supports 6 languages (EN, KO, JA, AR, FR, IT)
+- **Profile v3 support**: Compatible with both old and new 42 intra profiles
+- **Multi-language**: Supports 6 languages (EN, KO, JA, AR, FR, IT)
 
 ## Installation
 
 ### Chrome
+
 1. Clone this repository or download it as a zip file.
 2. Run `npm run build`
 3. Go to `chrome://extensions` in your Chrome browser.
@@ -27,6 +27,7 @@ After installation, check your profile calendar! 42-time is a cross-browser exte
 5. Click **Load unpacked** and select the `dist` folder.
 
 ### Firefox
+
 1. Clone this repository or download it as a zip file.
 2. Build the Firefox version: `npm run build:firefox`
 3. Go to `about:debugging` in your Firefox browser.
