@@ -3,7 +3,11 @@
 [![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/42-time/mkcopllnpeelmaigfccokdclgaefnjoe?authuser=3&hl=ko)
 [![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/42-time/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
-After installation, check your profile calendar! 42-time is a cross-browser extension that visually displays your accumulated monthly login time on the 42 intra.
+**Language / 언어**: [ English](README.md) | [ 한국어](README.ko.md)
+
+---
+
+After installation, check your profile calendar! 42-time is a cross-browser extension that visually displays your accumulated monthly login time on the 42 intra. This extension was created to solve the problem of not being able to easily view monthly accumulated learning hours on the 42 School intranet.
 <br>
 <img width="173" alt="intra-original" src="https://github.com/user-attachments/assets/1aceb15b-7392-42cc-b9e3-1bfe4cf68836" />
 <br>
@@ -43,6 +47,7 @@ After installation, check your profile calendar! 42-time is a cross-browser exte
 
 - TypeScript
 - Webpack
+- ESLint & Prettier
 - Cross-browser compatibility layer
 
 ## Development & Build
@@ -59,6 +64,12 @@ npm run build:firefox
 # Development mode
 npm run dev        # Chrome
 npm run dev:firefox # Firefox
+
+# Code quality
+npm run lint       # Check for linting errors
+npm run lint:fix   # Auto-fix linting errors
+npm run format     # Format code with Prettier
+npm run format:check # Check code formatting
 ```
 
 - The build output will be generated in the `dist/` folder.
