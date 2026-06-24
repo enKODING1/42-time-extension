@@ -29,11 +29,11 @@
     "webpack-cli": "^5.0.0"
   },
   "lint-staged": {
-    "*.{ts, js}": [
+    "*.{ts,js}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{css, html, json}": [
+    "*.{css,html,json}": [
       "prettier --write"
     ]
   }
