@@ -25,10 +25,10 @@ After installation, check your profile calendar! 42-time is a cross-browser exte
 ### Chrome
 
 1. Clone this repository or download it as a zip file.
-2. Run `npm run build`
+2. Run `npm run build:chrome`
 3. Go to `chrome://extensions` in your Chrome browser.
 4. Enable **Developer mode** in the top right corner.
-5. Click **Load unpacked** and select the `dist` folder.
+5. Click **Load unpacked** and select the `dist/chrome` folder.
 
 ### Firefox
 
@@ -36,7 +36,7 @@ After installation, check your profile calendar! 42-time is a cross-browser exte
 2. Build the Firefox version: `npm run build:firefox`
 3. Go to `about:debugging` in your Firefox browser.
 4. Click **This Firefox** in the left sidebar.
-5. Click **Load Temporary Add-on** and select `dist/manifest.json`.
+5. Click **Load Temporary Add-on** and select `dist/firefox/manifest.json`.
 
 ## Usage
 
@@ -55,15 +55,18 @@ After installation, check your profile calendar! 42-time is a cross-browser exte
 ```bash
 npm install
 
-# For Chrome
+# Build both browsers
 npm run build
 
-# For Firefox
+# For Chrome only
+npm run build:chrome
+
+# For Firefox only
 npm run build:firefox
 
-# Development mode
-npm run dev        # Chrome
-npm run dev:firefox # Firefox
+# Development mode (watch)
+npm run dev:chrome
+npm run dev:firefox
 
 # Code quality
 npm run lint       # Check for linting errors
@@ -72,7 +75,7 @@ npm run format     # Format code with Prettier
 npm run format:check # Check code formatting
 ```
 
-- The build output will be generated in the `dist/` folder.
+- The build output will be generated in `dist/chrome/` and `dist/firefox/`.
 
 ## Contribution
 

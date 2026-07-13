@@ -37,7 +37,7 @@
     "default_popup": "popup/popup.html",
     "default_icon": "icons/icon128.png"
   },
-  "applications": {
+  "browser_specific_settings": {
     "gecko": {
       "id": "42-time@42school.extension",
       "strict_min_version": "109.0"

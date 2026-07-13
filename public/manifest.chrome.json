@@ -4,12 +4,8 @@
   "version": "1.2.1",
   "description": "42 time manager",
   "default_locale": "en",
-  "host_permissions": [
-    "https://translate.intra.42.fr/users/*"
-  ],
-  "permissions": [
-    "tabs"
-  ],
+  "host_permissions": ["https://translate.intra.42.fr/users/*"],
+  "permissions": ["tabs"],
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
@@ -17,9 +13,7 @@
     "128": "icons/icon128.png"
   },
   "background": {
-    "service_worker": "background.js",
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -35,15 +29,5 @@
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": "icons/icon128.png"
-  },
-  "browser_action": {
-    "default_popup": "popup/popup.html",
-    "default_icon": "icons/icon128.png"
-  },
-  "applications": {
-    "gecko": {
-      "id": "42-time@42school.extension",
-      "strict_min_version": "109.0"
-    }
   }
-} 
+}

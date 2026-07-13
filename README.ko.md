@@ -25,10 +25,10 @@
 ### Chrome
 
 1. 이 저장소를 클론하거나 zip 파일로 다운로드하세요.
-2. `npm run build` 실행
+2. `npm run build:chrome` 실행
 3. Chrome 브라우저에서 `chrome://extensions`로 이동
 4. 우측 상단에서 **개발자 모드** 활성화
-5. **압축해제된 확장 프로그램을 로드합니다** 클릭 후 `dist` 폴더 선택
+5. **압축해제된 확장 프로그램을 로드합니다** 클릭 후 `dist/chrome` 폴더 선택
 
 ### Firefox
 
@@ -36,7 +36,7 @@
 2. Firefox 버전 빌드: `npm run build:firefox`
 3. Firefox 브라우저에서 `about:debugging`으로 이동
 4. 좌측 사이드바에서 **This Firefox** 클릭
-5. **Load Temporary Add-on** 클릭 후 `dist/manifest.json` 선택
+5. **Load Temporary Add-on** 클릭 후 `dist/firefox/manifest.json` 선택
 
 ## 사용법
 
@@ -55,15 +55,18 @@
 ```bash
 npm install
 
-# Chrome용
+# 양쪽 브라우저 모두 빌드
 npm run build
+
+# Chrome용
+npm run build:chrome
 
 # Firefox용
 npm run build:firefox
 
-# 개발 모드
-npm run dev        # Chrome
-npm run dev:firefox # Firefox
+# 개발 모드 (watch)
+npm run dev:chrome
+npm run dev:firefox
 
 # 코드 품질
 npm run lint       # 린팅 오류 확인
@@ -72,7 +75,7 @@ npm run format     # Prettier로 코드 포맷팅
 npm run format:check # 코드 포맷팅 확인
 ```
 
-- 빌드 출력은 `dist/` 폴더에 생성됩니다
+- 빌드 출력은 `dist/chrome/`, `dist/firefox/` 폴더에 각각 생성됩니다
 
 ## 기여하기
 
