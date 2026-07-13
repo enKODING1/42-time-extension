@@ -9,8 +9,8 @@
     "dev": "npm run dev:chrome",
     "dev:chrome": "webpack --mode development --watch --env browser=chrome",
     "dev:firefox": "webpack --mode development --watch --env browser=firefox",
-    "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix",
     "format": "prettier --write src/**/*.{ts,css,html}",
     "format:check": "prettier --check src/**/*.{ts,css,html}",
     "prepare": "husky"
