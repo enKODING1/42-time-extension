@@ -40,23 +40,16 @@ function insertGraphToggle(series: MonthlyPoint[]): boolean {
 
   const button = document.createElement('button');
   button.setAttribute(BUTTON_ATTR, 'true');
-  button.textContent = '그래프';
-  Object.assign(button.style, {
-    padding: '2px 10px',
-    fontSize: '12px',
-    fontWeight: 'bold',
-    color: '#007B7C',
-    background: 'white',
-    border: '1px solid #00BABC',
-    borderRadius: '6px',
-    cursor: 'pointer',
-  });
+  button.textContent = 'GRAPH';
+  // 페이지의 Event marks 링크와 같은 유틸리티 클래스를 그대로 쓴다.
+  button.className =
+    'text-center text-legacy-main bg-transparent border border-legacy-main py-1.5 px-2 cursor-pointer text-xs uppercase';
 
   button.addEventListener('click', () => {
     const showGraph = graph.style.display === 'none';
     graph.style.display = showGraph ? 'block' : 'none';
     section.body.style.display = showGraph ? 'none' : '';
-    button.textContent = showGraph ? '달력' : '그래프';
+    button.textContent = showGraph ? 'CALENDAR' : 'GRAPH';
   });
 
   section.headerRow.appendChild(button);
