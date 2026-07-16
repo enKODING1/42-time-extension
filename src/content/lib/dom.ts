@@ -9,14 +9,33 @@ export function getLogin(): string | undefined {
 
 export function waitForLoginAndRun(
   callback: (login: string) => void,
-  retry = 10
+  timeoutMs = 10_000
 ): void {
   const login = getLogin();
   if (login) {
     callback(login);
-  } else if (retry > 0) {
-    setTimeout(() => waitForLoginAndRun(callback, retry - 1), 300);
-  } else {
-    console.log('login not found');
+    return;
   }
+
+  const observer = new MutationObserver(() => {
+    const login = getLogin();
+    if (!login) return;
+
+    observer.disconnect();
+    clearTimeout(timeoutId);
+    callback(login);
+  });
+
+  // DOM 변화가 끝내 없을 때 observer가 영원히 남지 않도록 타임아웃으로 정리한다.
+  const timeoutId = setTimeout(() => {
+    observer.disconnect();
+    console.log('login not found');
+  }, timeoutMs);
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['data-login', 'href'],
+  });
 }
