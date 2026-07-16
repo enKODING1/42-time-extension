@@ -21,8 +21,10 @@ const MONTH_LABELS = [
 
 // locations_stats의 일별 기록을 연-월 단위로 합쳐 시간순 시계열로 만든다.
 // (monthly-logtime의 aggregate는 연도를 무시하므로 그래프에는 쓸 수 없다)
+// 최근 maxMonths개월만 남긴다.
 export function getMonthlySeries(
-  stats: Record<string, string>
+  stats: Record<string, string>,
+  maxMonths = 4
 ): MonthlyPoint[] {
   const minutesByMonth = new Map<string, number>();
 
@@ -37,7 +39,7 @@ export function getMonthlySeries(
     minutesByMonth.set(key, (minutesByMonth.get(key) ?? 0) + h * 60 + m);
   }
 
-  const keys = Array.from(minutesByMonth.keys()).sort();
+  const keys = Array.from(minutesByMonth.keys()).sort().slice(-maxMonths);
   const years = new Set(keys.map((key) => key.slice(0, 4)));
 
   return keys.map((key) => {
