@@ -1,6 +1,6 @@
 {
   "name": "42-time-extension",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "42-time extension",
   "scripts": {
     "build": "npm run build:chrome && npm run build:firefox",
