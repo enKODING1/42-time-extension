@@ -35,7 +35,6 @@ function insertGraphToggle(series: MonthlyPoint[]): boolean {
   const graph = document.createElement('div');
   graph.setAttribute(GRAPH_ATTR, 'true');
   graph.style.display = 'none';
-  graph.style.overflowX = 'auto';
   graph.appendChild(renderGraph(series));
   section.body.insertAdjacentElement('afterend', graph);
 

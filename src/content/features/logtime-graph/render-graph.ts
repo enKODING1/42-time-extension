@@ -52,6 +52,13 @@ export function renderGraph(series: MonthlyPoint[]): SVGSVGElement {
     height: String(height),
     'font-family': 'sans-serif',
   });
+  // 컨테이너보다 크면 비율을 유지한 채 줄이고, 작으면 원본 크기로 가운데 정렬한다.
+  Object.assign(svg.style, {
+    display: 'block',
+    margin: '0 auto',
+    maxWidth: '100%',
+    height: 'auto',
+  });
 
   for (let tick = 0; tick <= tickCount; tick++) {
     const y = padTop + chartHeight * (1 - tick / tickCount);
