@@ -2,9 +2,10 @@ import { Feature, PageContext } from './types';
 import { fetchLocationStats } from './api/intra';
 import { waitForLoginAndRun } from './lib/dom';
 import { monthlyLogtime } from './features/monthly-logtime';
+import { logtimeGraph } from './features/logtime-graph';
 
 // 새 기능은 features/ 아래에 폴더를 만들고 이 배열에 등록한다.
-const features: Feature[] = [monthlyLogtime];
+const features: Feature[] = [monthlyLogtime, logtimeGraph];
 
 function createContext(login: string): PageContext {
   let locationStats: Promise<Record<string, string> | null> | null = null;
