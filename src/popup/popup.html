@@ -7,31 +7,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <div class="logo">⏰</div>
+      <header class="header">
         <h1 id="app-name">42 Time</h1>
         <p class="subtitle" id="app-subtitle">월별 학습시간 확인하기</p>
-      </div>
+      </header>
 
-      <div class="main">
+      <main class="main">
         <a href="https://intra.42.fr" id="intra-link" class="primary-btn">
-          <span class="btn-icon">🔗</span>
           <span id="go-to-profile">프로필 확인하러 가기</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </a>
-      </div>
-
-      <div class="footer">
         <p class="info" id="info-text">
           프로필 페이지에서 월별 누적시간을 확인하세요
         </p>
+      </main>
+
+      <div class="divider"></div>
+
+      <footer class="footer">
         <a
           href="https://github.com/enkoding1/42-time-extension"
           id="github-link"
           class="secondary-link"
         >
-          <span id="issues-feedback">Issues & Feedback →</span>
+          <span id="issues-feedback">Issues & Feedback</span>
         </a>
-      </div>
+      </footer>
     </div>
     <script src="../popup.js"></script>
   </body>

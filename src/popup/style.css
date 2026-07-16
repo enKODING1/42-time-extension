@@ -5,62 +5,45 @@
 }
 
 body {
-  width: 320px;
-  min-height: 400px;
+  width: 300px;
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #333;
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 .container {
-  padding: 24px;
-  height: 100%;
+  padding: 32px 24px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 32px;
-}
-
-.logo {
-  font-size: 32px;
-  margin-bottom: 12px;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
+  margin-bottom: 28px;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  color: white;
-  margin-bottom: 8px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
   letter-spacing: -0.5px;
 }
 
 .subtitle {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  color: #888;
   font-weight: 400;
 }
 
 .main {
-  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .primary-btn {
@@ -68,54 +51,53 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.95);
-  color: #4a5568;
+  width: 100%;
+  padding: 14px 24px;
+  background: #1a1a1a;
+  color: #fff;
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease;
-  backdrop-filter: blur(10px);
+  transition: background 0.2s ease;
 }
 
 .primary-btn:hover {
-  background: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn-icon {
-  font-size: 16px;
-}
-
-.footer {
-  text-align: center;
-  margin-top: 24px;
+  background: #333;
 }
 
 .info {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 16px;
+  color: #999;
   line-height: 1.4;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: #e8e8e8;
+  margin: 16px 0;
+}
+
+.footer {
+  text-align: center;
 }
 
 .secondary-link {
   display: inline-block;
-  color: rgba(255, 255, 255, 0.9);
+  color: #888;
   text-decoration: none;
   font-size: 12px;
   font-weight: 500;
-  padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
+  padding: 6px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .secondary-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-1px);
+  color: #1a1a1a;
+  border-color: #bbb;
 }
