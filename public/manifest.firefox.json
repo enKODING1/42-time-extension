@@ -1,11 +1,10 @@
 {
   "manifest_version": 2,
   "name": "42 time",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "42 time manager",
   "default_locale": "en",
   "permissions": [
-    "tabs",
     "https://translate.intra.42.fr/users/*",
     "https://profile-v3.intra.42.fr/",
     "https://profile.intra.42.fr/",
